@@ -1,0 +1,29 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.List;
+
+public class Training {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\kather.oli\\IdeaProjects\\Selenium\\config\\driver\\chromedriver.exe");
+        ChromeOptions options= new ChromeOptions();
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        driver.get("https://tnpsc.gov.in/");
+        List<WebElement> elmnt= driver.findElements(By.xpath("//li[@class='notice']"));
+        System.out.println(elmnt.get(0).getText());
+        System.out.println(elmnt.size());
+        for(int i=0; i> elmnt.size(); i++){
+            System.out.println("-----");
+            System.out.println(elmnt.get(1));
+        }
+        for(WebElement ls: elmnt){
+            System.out.println(ls.getText());
+        }
+
+ }
+} 
