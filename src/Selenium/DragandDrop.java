@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class DragandDrop {
     public static void main(String args[]) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\Users\kather.oli\IdeaProjects\Selenium\config\driver\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\New folder\\Seleni\\config\\driver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://jqueryui.com/droppable/");
         driver.manage().window().maximize();
@@ -15,5 +15,8 @@ public class DragandDrop {
         WebElement droppableElement = driver.findElement(By.id("droppable"));
         Actions action = new Actions(driver);
         action.dragAndDrop(draggaableElement,droppableElement ).build().perform();
+
     }
 }
+
+//java -jar selenium-server-4.4.0.jar
